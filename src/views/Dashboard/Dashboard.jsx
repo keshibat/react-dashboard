@@ -34,12 +34,8 @@ import Warning from "@material-ui/icons/Warning";
 import DateRange from "@material-ui/icons/DateRange";
 import LocalOffer from "@material-ui/icons/LocalOffer";
 import LocalGasStation from "@material-ui/icons/LocalGasStation";
+import DirectionsCar from "@material-ui/icons/DirectionsCar";
 import BusinessCenter from "@material-ui/icons/BusinessCenter";
-
-
-
-
-
 
 
 import Update from "@material-ui/icons/Update";
@@ -62,6 +58,9 @@ import CardHeader from "components/Card/CardHeader.jsx";
 import CardIcon from "components/Card/CardIcon.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
+
+// other components
+import GoogleMaps from "../Maps/GoogleMaps";
 
 import {
   dailySalesChart,
@@ -141,8 +140,14 @@ class Dashboard extends React.Component {
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.chart}>
-                  <LocalGasStation />
-                  10L (100km of drive time)
+                  <div>
+                    <DirectionsCar />
+                    Traveled: 200km
+                  </div>
+                  <div>
+                    <LocalGasStation />
+                     Fuel Economy: 10L/100km
+                  </div>
                 </div>
               </CardFooter>
             </Card>
@@ -187,97 +192,32 @@ class Dashboard extends React.Component {
           </GridItem>
         </GridContainer>
         <GridContainer>
-          <h3>Google Map (parking location)</h3>
-          <br />
+
           <GridItem xs={12}>
             <Card>
               <CardHeader color="success" icon>
-                <CardIcon color="success">
-                  <Language />
-                </CardIcon>
-                <h4 className={classes.cardIconTitle}>
-                  Global Sales by Top Locations
-                </h4>
               </CardHeader>
               <CardBody>
                 <GridContainer justify="space-between">
-                  <GridItem xs={12} sm={12} md={5}>
-                    <Table
-                      tableData={[
-                        [
-                          <img src={us_flag} alt="us_flag" key={"flag"} />,
-                          "USA",
-                          "2.920",
-                          "53.23%"
-                        ],
-                        [
-                          <img src={de_flag} alt="us_flag" key={"flag"} />,
-                          "Germany",
-                          "1.300",
-                          "20.43%"
-                        ],
-                        [
-                          <img src={au_flag} alt="us_flag" key={"flag"} />,
-                          "Australia",
-                          "760",
-                          "10.35%"
-                        ],
-                        [
-                          <img src={gb_flag} alt="us_flag" key={"flag"} />,
-                          "United Kingdom",
-                          "690",
-                          "7.87%"
-                        ],
-                        [
-                          <img src={ro_flag} alt="us_flag" key={"flag"} />,
-                          "Romania",
-                          "600",
-                          "5.94%"
-                        ],
-                        [
-                          <img src={br_flag} alt="us_flag" key={"flag"} />,
-                          "Brasil",
-                          "550",
-                          "4.34%"
-                        ]
-                      ]}
-                    />
-                  </GridItem>
-                  <GridItem xs={12} sm={12} md={6}>
-                    <VectorMap
-                      map={"world_mill"}
-                      backgroundColor="transparent"
-                      zoomOnScroll={false}
-                      containerStyle={{
-                        width: "100%",
-                        height: "280px"
-                      }}
-                      containerClassName="map"
-                      regionStyle={{
-                        initial: {
-                          fill: "#e4e4e4",
-                          "fill-opacity": 0.9,
-                          stroke: "none",
-                          "stroke-width": 0,
-                          "stroke-opacity": 0
-                        }
-                      }}
-                      series={{
-                        regions: [
-                          {
-                            values: mapData,
-                            scale: ["#AAAAAA", "#444444"],
-                            normalizeFunction: "polynomial"
-                          }
-                        ]
-                      }}
-                    />
+                  <GridItem xs={12} sm={12} md={12}>
+                    <GoogleMaps />
+
+
+
+
+
                   </GridItem>
                 </GridContainer>
               </CardBody>
             </Card>
           </GridItem>
         </GridContainer>
+
+
+
+
+
+
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
           </GridItem>
@@ -286,6 +226,8 @@ class Dashboard extends React.Component {
           <GridItem xs={12} sm={12} md={4}>
           </GridItem>
         </GridContainer>
+
+
 
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>

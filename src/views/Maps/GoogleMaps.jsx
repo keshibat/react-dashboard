@@ -163,62 +163,10 @@ class GoogleMaps extends React.Component {
           <Card>
             <CardHeader color="rose" icon>
               <CardIcon color="rose">
-                <Map />
-              </CardIcon>
-              <h4 className={classes.cardIconTitle}>Satellite Map</h4>
-            </CardHeader>
-            <CardBody>
-              <SatelliteMap
-                googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
-                loadingElement={<div style={{ height: `100%` }} />}
-                containerElement={
-                  <div
-                    style={{
-                      height: `280px`,
-                      borderRadius: "6px",
-                      overflow: "hidden"
-                    }}
-                  />
-                }
-                mapElement={<div style={{ height: `100%` }} />}
-              />
-            </CardBody>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={6}>
-          <Card>
-            <CardHeader color="rose" icon>
-              <CardIcon color="rose">
-                <AddLocation />
-              </CardIcon>
-              <h4 className={classes.cardIconTitle}>Regular Map</h4>
-            </CardHeader>
-            <CardBody>
-              <RegularMap
-                googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
-                loadingElement={<div style={{ height: `100%` }} />}
-                containerElement={
-                  <div
-                    style={{
-                      height: `280px`,
-                      borderRadius: "6px",
-                      overflow: "hidden"
-                    }}
-                  />
-                }
-                mapElement={<div style={{ height: `100%` }} />}
-              />
-            </CardBody>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={6}>
-          <Card>
-            <CardHeader color="rose" icon>
-              <CardIcon color="rose">
                 <Place />
               </CardIcon>
               <h4 className={classes.cardIconTitle}>
-                Custom Skin & Settings Map
+                 Parking Location
               </h4>
             </CardHeader>
             <CardBody>
