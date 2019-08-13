@@ -61,6 +61,8 @@ import CardFooter from "components/Card/CardFooter.jsx";
 
 // other components
 import GoogleMaps from "../Maps/GoogleMaps";
+import Tables from "../Tables/ReactTables";
+
 
 import {
   dailySalesChart,
@@ -191,8 +193,9 @@ class Dashboard extends React.Component {
             </Card>
           </GridItem>
         </GridContainer>
-        <GridContainer>
 
+
+        <GridContainer>
           <GridItem xs={12}>
             <Card>
               <CardHeader color="success" icon>
@@ -201,11 +204,6 @@ class Dashboard extends React.Component {
                 <GridContainer justify="space-between">
                   <GridItem xs={12} sm={12} md={12}>
                     <GoogleMaps />
-
-
-
-
-
                   </GridItem>
                 </GridContainer>
               </CardBody>
@@ -214,32 +212,22 @@ class Dashboard extends React.Component {
         </GridContainer>
 
 
-
-
-
-
         <GridContainer>
-          <GridItem xs={12} sm={12} md={4}>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12}>
+            <Card>
+              <CardHeader color="success" icon>
+              </CardHeader>
+              <CardBody>
+                <GridContainer justify="space-between">
+                  <GridItem xs={12} sm={12} md={12}>
+                    <Tables />
+                  </GridItem>
+                </GridContainer>
+              </CardBody>
+            </Card>
           </GridItem>
         </GridContainer>
 
-
-
-        <GridContainer>
-          <GridItem xs={12} sm={12} md={4}>
-          </GridItem>
-
-          <GridItem xs={12} sm={12} md={4}>
-          </GridItem>
-
-          <GridItem xs={12} sm={12} md={4}>
-          </GridItem>
-
-        </GridContainer>
       </div>
     );
   }
