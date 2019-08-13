@@ -72,30 +72,6 @@ import {
 
 import dashboardStyle from "assets/jss/material-dashboard-pro-react/views/dashboardStyle";
 
-import priceImage1 from "assets/img/card-2.jpeg";
-import priceImage2 from "assets/img/card-3.jpeg";
-import priceImage3 from "assets/img/card-1.jpeg";
-
-const us_flag = require("assets/img/flags/US.png");
-const de_flag = require("assets/img/flags/DE.png");
-const au_flag = require("assets/img/flags/AU.png");
-const gb_flag = require("assets/img/flags/GB.png");
-const ro_flag = require("assets/img/flags/RO.png");
-const br_flag = require("assets/img/flags/BR.png");
-
-var mapData = {
-  AU: 760,
-  BR: 550,
-  CA: 120,
-  DE: 1300,
-  FR: 540,
-  GB: 690,
-  GE: 200,
-  IN: 200,
-  RO: 600,
-  RU: 300,
-  US: 2920
-};
 
 class Dashboard extends React.Component {
   state = {
