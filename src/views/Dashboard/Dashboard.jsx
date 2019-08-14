@@ -1,19 +1,3 @@
-/*!
-
-=========================================================
-* Material Dashboard PRO React - v1.7.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-pro-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import PropTypes from "prop-types";
 // react plugin for creating charts
@@ -36,6 +20,7 @@ import LocalOffer from "@material-ui/icons/LocalOffer";
 import LocalGasStation from "@material-ui/icons/LocalGasStation";
 import DirectionsCar from "@material-ui/icons/DirectionsCar";
 import BusinessCenter from "@material-ui/icons/BusinessCenter";
+import LocationOn from "@material-ui/icons/LocationOn";
 
 
 import Update from "@material-ui/icons/Update";
@@ -101,9 +86,17 @@ class Dashboard extends React.Component {
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.chart}>
+                <div>
                   <DateRange />
                   Thursday 15th Aug 3pm
+                  </div>
+                <div>
+                  <LocationOn />
+                  Last Location: Bondi Beach
+
                 </div>
+                 </div>
+
               </CardFooter>
             </Card>
           </GridItem>
@@ -114,17 +107,13 @@ class Dashboard extends React.Component {
                   <Icon>local_gas_station</Icon>
                 </CardIcon>
                 <p className={classes.cardCategory}>Estimated fuel left:</p>
-                <h3 className={classes.cardTitle}>10 L</h3>
+                <h3 className={classes.cardTitle}>58 km</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.chart}>
                   <div>
                     <DirectionsCar />
-                    Traveled: 200km
-                  </div>
-                  <div>
-                    <LocalGasStation />
-                     Fuel Economy: 10L/100km
+                    Traveled: 200km (since last fill up)
                   </div>
                 </div>
               </CardFooter>
@@ -136,13 +125,12 @@ class Dashboard extends React.Component {
                 <CardIcon color="info">
                   <Icon>directions_car</Icon>
                 </CardIcon>
-                <p className={classes.cardCategory}>Business Travel</p>
-                <h3 className={classes.cardTitle}>75 %</h3>
+                <p className={classes.cardCategory}>Fuel Economy</p>
+                <h3 className={classes.cardTitle}>12L/100km</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.chart}>
-                  <BusinessCenter />
-
+                  <DirectionsCar />
                 </div>
               </CardFooter>
             </Card>
@@ -169,6 +157,92 @@ class Dashboard extends React.Component {
             </Card>
           </GridItem>
         </GridContainer>
+
+
+
+
+        <GridContainer>
+          <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+              <CardHeader color="warning" stats icon>
+                <CardIcon color="warning">
+                  <Icon>directions_car</Icon>
+                </CardIcon>
+                <p className={classes.cardCategory}>Trip</p>
+                <h3 className={classes.cardTitle}>
+                  340000 km
+                  4000 km
+                </h3>
+              </CardHeader>
+              <CardFooter stats>
+                <div className={classes.chart}>
+                  <div>
+                    <DirectionsCar />
+                    340000 km (Total)
+                  </div>
+                  <div>
+                    <DirectionsCar />
+                    4000 km (This tax year)
+                </div>
+                </div>
+
+              </CardFooter>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+              <CardHeader color="success" stats icon>
+                <CardIcon color="success">
+                  <Icon>directions_car</Icon>
+                </CardIcon>
+                <p className={classes.cardCategory}>Average Speed:</p>
+                <h3 className={classes.cardTitle}>28 km</h3>
+              </CardHeader>
+              <CardFooter stats>
+                <div className={classes.chart}>
+                  <div>
+                    <DirectionsCar />
+
+                  </div>
+                </div>
+              </CardFooter>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+              <CardHeader color="info" stats icon>
+                <CardIcon color="info">
+                  <Icon>directions_car</Icon>
+                </CardIcon>
+                <p className={classes.cardCategory}>Hours you spent in car (year)</p>
+                <h3 className={classes.cardTitle}>120 hours</h3>
+              </CardHeader>
+              <CardFooter stats>
+                <div className={classes.chart}>
+                  <DirectionsCar />
+
+                </div>
+              </CardFooter>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+              <CardHeader color="danger" stats icon>
+                <CardIcon color="danger">
+                  <Icon>directions_car</Icon>
+                </CardIcon>
+                <p className={classes.cardCategory}> Travel</p>
+                <h3 className={classes.cardTitle}>75 %</h3>
+              </CardHeader>
+              <CardFooter stats>
+                <div className={classes.chart}>
+                  <BusinessCenter />
+                </div>
+              </CardFooter>
+            </Card>
+          </GridItem>
+        </GridContainer>
+
 
 
         <GridContainer>
