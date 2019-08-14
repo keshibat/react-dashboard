@@ -119,22 +119,7 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={6} md={6} lg={3}>
-            <Card>
-              <CardHeader color="info" stats icon>
-                <CardIcon color="info">
-                  <Icon>directions_car</Icon>
-                </CardIcon>
-                <p className={classes.cardCategory}>Fuel Economy</p>
-                <h3 className={classes.cardTitle}>12L/100km</h3>
-              </CardHeader>
-              <CardFooter stats>
-                <div className={classes.chart}>
-                  <DirectionsCar />
-                </div>
-              </CardFooter>
-            </Card>
-          </GridItem>
+
           <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
               <CardHeader color="info" stats icon>
@@ -156,12 +141,68 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
+
+
+          <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+              <CardHeader color="info" stats icon>
+                <CardIcon color="info">
+                  <Icon>directions_car</Icon>
+                </CardIcon>
+                <p className={classes.cardCategory}>Business Travel</p>
+                <h3 className={classes.cardTitle}>
+                  75 %
+                 </h3>
+                <h3 className={classes.cardTitle}>
+                  30000 km
+                </h3>
+              </CardHeader>
+              <CardFooter stats>
+                <div className={classes.chart}>
+                  <BusinessCenter />
+                </div>
+              </CardFooter>
+            </Card>
+          </GridItem>
         </GridContainer>
 
 
 
-
         <GridContainer>
+          <GridItem xs={12}>
+            <Card>
+              <CardHeader color="success" icon>
+              </CardHeader>
+              <CardBody>
+                <GridContainer justify="space-between">
+                  <GridItem xs={12} sm={12} md={12}>
+                    <GoogleMaps />
+                  </GridItem>
+                </GridContainer>
+              </CardBody>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={6} md={6} lg={3}>
+            <Card>
+              <CardHeader color="success" stats icon>
+                <CardIcon color="success">
+                  <Icon>directions_car</Icon>
+                </CardIcon>
+                <p className={classes.cardCategory}>Average Speed:</p>
+                <h3 className={classes.cardTitle}>28 km</h3>
+              </CardHeader>
+              <CardFooter stats>
+                <div className={classes.chart}>
+                  <div>
+                    <DirectionsCar />
+
+                  </div>
+                </div>
+              </CardFooter>
+            </Card>
+          </GridItem>
+
+
           <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
               <CardHeader color="warning" stats icon>
@@ -189,29 +230,11 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={6} md={6} lg={3}>
-            <Card>
-              <CardHeader color="success" stats icon>
-                <CardIcon color="success">
-                  <Icon>directions_car</Icon>
-                </CardIcon>
-                <p className={classes.cardCategory}>Average Speed:</p>
-                <h3 className={classes.cardTitle}>28 km</h3>
-              </CardHeader>
-              <CardFooter stats>
-                <div className={classes.chart}>
-                  <div>
-                    <DirectionsCar />
 
-                  </div>
-                </div>
-              </CardFooter>
-            </Card>
-          </GridItem>
           <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
-              <CardHeader color="info" stats icon>
-                <CardIcon color="info">
+              <CardHeader color="warning" stats icon>
+                <CardIcon color="warning">
                   <Icon>directions_car</Icon>
                 </CardIcon>
                 <p className={classes.cardCategory}>Time in car (this year)</p>
@@ -225,48 +248,41 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
+
+
           <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
-              <CardHeader color="danger" stats icon>
-                <CardIcon color="danger">
+              <CardHeader color="info" stats icon>
+                <CardIcon color="info">
                   <Icon>directions_car</Icon>
                 </CardIcon>
-                <p className={classes.cardCategory}>Business Travel</p>
-                <h3 className={classes.cardTitle}>
-                  75 %
-                 </h3>
-                <h3 className={classes.cardTitle}>
-                  30000 km
-                </h3>
-
-
+                <p className={classes.cardCategory}>Fuel Economy</p>
+                <h3 className={classes.cardTitle}>12L/100km</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.chart}>
-                  <BusinessCenter />
+                  <DirectionsCar />
                 </div>
               </CardFooter>
             </Card>
           </GridItem>
+
+
+
+
+
+
+
+
+
+
         </GridContainer>
 
 
 
-        <GridContainer>
-          <GridItem xs={12}>
-            <Card>
-              <CardHeader color="success" icon>
-              </CardHeader>
-              <CardBody>
-                <GridContainer justify="space-between">
-                  <GridItem xs={12} sm={12} md={12}>
-                    <GoogleMaps />
-                  </GridItem>
-                </GridContainer>
-              </CardBody>
-            </Card>
-          </GridItem>
-        </GridContainer>
+
+
+
 
 
         <GridContainer>
@@ -284,7 +300,6 @@ class Dashboard extends React.Component {
             </Card>
           </GridItem>
         </GridContainer>
-
       </div>
     );
   }
