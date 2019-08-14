@@ -168,7 +168,7 @@ class Dashboard extends React.Component {
                 <CardIcon color="warning">
                   <Icon>directions_car</Icon>
                 </CardIcon>
-                <p className={classes.cardCategory}>Trip</p>
+                <p className={classes.cardCategory}>Total Distance</p>
                 <h3 className={classes.cardTitle}>
                   340000 km
                   4000 km
@@ -214,7 +214,7 @@ class Dashboard extends React.Component {
                 <CardIcon color="info">
                   <Icon>directions_car</Icon>
                 </CardIcon>
-                <p className={classes.cardCategory}>Hours you spent in car (year)</p>
+                <p className={classes.cardCategory}>Time in car (this year)</p>
                 <h3 className={classes.cardTitle}>120 hours</h3>
               </CardHeader>
               <CardFooter stats>
@@ -231,8 +231,15 @@ class Dashboard extends React.Component {
                 <CardIcon color="danger">
                   <Icon>directions_car</Icon>
                 </CardIcon>
-                <p className={classes.cardCategory}> Travel</p>
-                <h3 className={classes.cardTitle}>75 %</h3>
+                <p className={classes.cardCategory}>Business Travel</p>
+                <h3 className={classes.cardTitle}>
+                  75 %
+                 </h3>
+                <h3 className={classes.cardTitle}>
+                  30000 km
+                </h3>
+
+
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.chart}>
