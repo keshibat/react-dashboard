@@ -46,7 +46,7 @@ import CardFooter from "components/Card/CardFooter.jsx";
 
 // other components
 import GoogleMaps from "../Maps/GoogleMaps";
-import Tables from "../Tables/ReactTables";
+import Tables from "../Tables/AntdTables";
 
 
 import {
@@ -54,6 +54,7 @@ import {
   emailsSubscriptionChart,
   completedTasksChart
 } from "variables/charts";
+
 
 import dashboardStyle from "assets/jss/material-dashboard-pro-react/views/dashboardStyle";
 
@@ -268,18 +269,7 @@ class Dashboard extends React.Component {
           </GridItem>
 
 
-
-
-
-
-
-
-
-
         </GridContainer>
-
-
-
 
 
 
