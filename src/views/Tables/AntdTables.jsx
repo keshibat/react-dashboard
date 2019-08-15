@@ -36,8 +36,12 @@ import CardIcon from "components/Card/CardIcon.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 
 import { dataTable } from "variables/general.jsx";
-
 import { cardTitle } from "assets/jss/material-dashboard-pro-react.jsx";
+
+import 'antd/dist/antd.css';
+// Button should be inside import { Table, Tag } from 'antd';
+import { Table, Tag } from 'antd';
+
 
 const styles = {
   cardIconTitle: {
@@ -47,148 +51,118 @@ const styles = {
   }
 };
 
-class AntdTables extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: dataTable.dataRows.map((prop, key) => {
-        return {
-          id: key,
-          name: prop[0],
-          position: prop[1],
-          office: prop[2],
-          age: prop[3],
-          actions: (
-            // we've added some custom button actions
-            <div className="actions-right">
-              {/* use this button to add a like kind of action */}
-              <Button
-                justIcon
-                round
-                simple
-                onClick={() => {
-                  let obj = this.state.data.find(o => o.id === key);
-                  alert(
-                    "You've clicked LIKE button on \n{ \nName: " +
-                    obj.name +
-                    ", \nposition: " +
-                    obj.position +
-                    ", \noffice: " +
-                    obj.office +
-                    ", \nage: " +
-                    obj.age +
-                    "\n}."
-                  );
-                }}
-                color="info"
-                className="like"
-              >
-                <Favorite />
-              </Button>{" "}
-              {/* use this button to add a edit kind of action */}
-              <Button
-                justIcon
-                round
-                simple
-                onClick={() => {
-                  let obj = this.state.data.find(o => o.id === key);
-                  alert(
-                    "You've clicked EDIT button on \n{ \nName: " +
-                    obj.name +
-                    ", \nposition: " +
-                    obj.position +
-                    ", \noffice: " +
-                    obj.office +
-                    ", \nage: " +
-                    obj.age +
-                    "\n}."
-                  );
-                }}
-                color="warning"
-                className="edit"
-              >
-                <Dvr />
-              </Button>{" "}
-              {/* use this button to remove the data row */}
-              <Button
-                justIcon
-                round
-                simple
-                onClick={() => {
-                  var data = this.state.data;
-                  data.find((o, i) => {
-                    if (o.id === key) {
-                      // here you should add some custom code so you can delete the data
-                      // from this component and from your server as well
-                      data.splice(i, 1);
-                      return true;
-                    }
-                    return false;
-                  });
-                  this.setState({ data: data });
-                }}
-                color="danger"
-                className="remove"
-              >
-                <Close />
-              </Button>{" "}
-            </div>
-          )
-        };
-      })
-    };
+const data = [
+  {
+    time: `13 Aug 3:45 PM`,
+    tags: ['busuiness'],
+    startlocation: `Sydney`,
+    endlocation: `Brisbane`,
+  },
+  {
+    time: `13 Aug 3:45 PM`,
+    tags: ['vacation', 'Melbourne'],
+    startlocation: `Sydney`,
+    endlocation: `Melbourne`,
+  },
+  {
+    time: `13 Aug 3:45 PM`,
+    tags: ['busuiness', 'Brisbane'],
+    startlocation: `Sydney`,
+    endlocation: `Brisbane`,
+  },
+  {
+    time: `13 Aug 3:45 PM`,
+    tags: ['vacation', 'sydney'],
+    startlocation: `Brisbane`,
+    endlocation: `Sydney`,
   }
-  render() {
 
-    const { classes } = this.props;
+
+];
+//
+
+const columns = [
+  {
+    title: 'Time',
+    dataIndex: 'time'
+  },
+
+  {
+    title: 'Tags',
+    dataIndex: 'tags',
+    render: tags => (
+      <span>
+        {tags.map(tag => {
+          let color = 'green';
+          if (tag === 'vacation') {
+            color = 'volcano';
+          } else if (tag === 'busuiness') {
+            color = 'geekblue';
+          }
+          return (
+            <Tag color={color} key={tag}>
+              {tag.toUpperCase()}
+            </Tag>
+          );
+        })}
+      </span>
+    ),
+  },
+
+  {
+    title: 'Start Loocation',
+    dataIndex: 'startlocation'
+  },
+  {
+    title: 'End Location',
+    dataIndex: 'endlocation'
+  }
+];
+
+
+
+class AntdTables extends React.Component {
+
+  state = {
+    selectedRowKeys: [], // Check here to configure the default column
+    loading: false,
+  };
+
+  start = () => {
+    this.setState({ loading: true });
+    // ajax request after empty completing
+    setTimeout(() => {
+      this.setState({
+        selectedRowKeys: [],
+        loading: false,
+      });
+    }, 1000);
+  };
+
+  onSelectChange = selectedRowKeys => {
+    console.log('selectedRowKeys changed: ', selectedRowKeys);
+    this.setState({ selectedRowKeys });
+  };
+
+  render() {
+    const { loading, selectedRowKeys } = this.state;
+    const rowSelection = {
+      selectedRowKeys,
+      onChange: this.onSelectChange,
+    };
+    const hasSelected = selectedRowKeys.length > 0;
     return (
-      <GridContainer>
-        <GridItem xs={12}>
-          <h1>Trying to import Antd Table</h1>
-          <Card>
-            <CardHeader color="primary" icon>
-              <CardIcon color="primary">
-                <Assignment />
-              </CardIcon>
-              <h4 className={classes.cardIconTitle}>Stats</h4>
-            </CardHeader>
-            <CardBody>
-              <ReactTable
-                data={this.state.data}
-                filterable
-                columns={[
-                  {
-                    Header: "Name",
-                    accessor: "name"
-                  },
-                  {
-                    Header: "Position",
-                    accessor: "position"
-                  },
-                  {
-                    Header: "Office",
-                    accessor: "office"
-                  },
-                  {
-                    Header: "Age",
-                    accessor: "age"
-                  },
-                  {
-                    Header: "Actions",
-                    accessor: "actions",
-                    sortable: false,
-                    filterable: false
-                  }
-                ]}
-                defaultPageSize={10}
-                showPaginationTop
-                showPaginationBottom={false}
-                className="-striped -highlight"
-              />
-            </CardBody>
-          </Card>
-        </GridItem>
-      </GridContainer>
+      <div>
+        <div style={{ marginBottom: 16 }}>
+          <Button type="primary" onClick={this.start} disabled={!hasSelected} loading={loading}>
+            Reload
+          </Button>
+          <span style={{ marginLeft: 8 }}>
+            {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
+          </span>
+        </div>
+        <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+      </div>
     );
   }
 }
