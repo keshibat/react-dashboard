@@ -136,7 +136,7 @@ class AntdTables extends React.Component {
         title: 'Time',
         dataIndex: 'time',
         key: 'time',
-        sorter: (a, b) => a.time - b.time,
+        sorter: (a, b) => (a.date < b.date) ? -1 : ((a.date > b.date) ? 1 : 0),
         sortOrder: sortedInfo.columnKey === 'time' && sortedInfo.order,
       },
 
