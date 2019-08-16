@@ -4,7 +4,7 @@
 * Material Dashboard PRO React - v1.7.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard-pro-react
+* Product Ptime: https://www.creative-tim.com/product/material-dashboard-pro-react
 * Copyright 2019 Creative Tim (https://www.creative-tim.com)
 
 * Coded by Creative Tim
@@ -51,35 +51,33 @@ const styles = {
   }
 };
 
+
 const data = [
   {
-    time: `13 Aug 3:45 PM`,
-    tags: ['busuiness'],
-    startlocation: `Sydney`,
-    endlocation: `Brisbane`,
+    key: '1',
+    startlocation: 'John Brown',
+    time: 32,
+    endlocation: 'New York No. 1 Lake Park',
   },
   {
-    time: `13 Aug 3:45 PM`,
-    tags: ['vacation', 'Melbourne'],
-    startlocation: `Sydney`,
-    endlocation: `Melbourne`,
+    key: '2',
+    startlocation: 'Jim Green',
+    time: 42,
+    endlocation: 'London No. 1 Lake Park',
   },
   {
-    time: `13 Aug 3:45 PM`,
-    tags: ['busuiness', 'Brisbane'],
-    startlocation: `Sydney`,
-    endlocation: `Brisbane`,
+    key: '3',
+    startlocation: 'Joe Black',
+    time: 32,
+    endlocation: 'Sidney No. 1 Lake Park',
   },
   {
-    time: `13 Aug 3:45 PM`,
-    tags: ['vacation', 'sydney'],
-    startlocation: `Brisbane`,
-    endlocation: `Sydney`,
-  }
-
-
+    key: '4',
+    startlocation: 'Jim Red',
+    time: 32,
+    endlocation: 'London No. 2 Lake Park',
+  },
 ];
-//
 
 const columns = [
   {
@@ -122,49 +120,87 @@ const columns = [
 
 
 class AntdTables extends React.Component {
-
   state = {
-    selectedRowKeys: [], // Check here to configure the default column
-    loading: false,
+    filteredInfo: null,
+    sortedInfo: null,
   };
 
-  start = () => {
-    this.setState({ loading: true });
-    // ajax request after empty completing
-    setTimeout(() => {
-      this.setState({
-        selectedRowKeys: [],
-        loading: false,
-      });
-    }, 1000);
+  handleChange = (pagination, filters, sorter) => {
+    console.log('Various parameters', pagination, filters, sorter);
+    this.setState({
+      filteredInfo: filters,
+      sortedInfo: sorter,
+    });
   };
 
-  onSelectChange = selectedRowKeys => {
-    console.log('selectedRowKeys changed: ', selectedRowKeys);
-    this.setState({ selectedRowKeys });
+  clearFilters = () => {
+    this.setState({ filteredInfo: null });
+  };
+
+  clearAll = () => {
+    this.setState({
+      filteredInfo: null,
+      sortedInfo: null,
+    });
+  };
+
+  setTimeSort = () => {
+    this.setState({
+      sortedInfo: {
+        order: 'descend',
+        columnKey: 'time',
+      },
+    });
   };
 
   render() {
-    const { loading, selectedRowKeys } = this.state;
-    const rowSelection = {
-      selectedRowKeys,
-      onChange: this.onSelectChange,
-    };
-    const hasSelected = selectedRowKeys.length > 0;
+    let { sortedInfo, filteredInfo } = this.state;
+    sortedInfo = sortedInfo || {};
+    filteredInfo = filteredInfo || {};
+    const columns = [
+      {
+        title: 'Time',
+        dataIndex: 'time',
+        key: 'time',
+        sorter: (a, b) => a.time - b.time,
+        sortOrder: sortedInfo.columnKey === 'time' && sortedInfo.order,
+      },
+
+      {
+        title: 'Start Location',
+        dataIndex: 'startlocation',
+        key: 'startlocation',
+        filters: [{ text: 'Joe', value: 'Joe' }, { text: 'Jim', value: 'Jim' }],
+        filteredValue: filteredInfo.startlocation || null,
+        onFilter: (value, record) => record.startlocation.includes(value),
+        sorter: (a, b) => a.startlocation.length - b.startlocation.length,
+        sortOrder: sortedInfo.columnKey === 'startlocation' && sortedInfo.order,
+      },
+
+      {
+        title: 'End Location',
+        dataIndex: 'endlocation',
+        key: 'endlocation',
+        filters: [{ text: 'London', value: 'London' }, { text: 'New York', value: 'New York' }],
+        filteredValue: filteredInfo.endlocation || null,
+        onFilter: (value, record) => record.endlocation.includes(value),
+        sorter: (a, b) => a.endlocation.length - b.endlocation.length,
+        sortOrder: sortedInfo.columnKey === 'endlocation' && sortedInfo.order,
+      },
+    ];
     return (
       <div>
-        <div style={{ marginBottom: 16 }}>
-          <Button type="primary" onClick={this.start} disabled={!hasSelected} loading={loading}>
-            Reload
-          </Button>
-          <span style={{ marginLeft: 8 }}>
-            {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
-          </span>
+        <div className="table-operations">
+          <Button onClick={this.setTimeSort}>Sort time</Button>
+          <Button onClick={this.clearFilters}>Clear filters</Button>
+          <Button onClick={this.clearAll}>Clear filters and sorters</Button>
         </div>
-        <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
+        <Table columns={columns} dataSource={data} onChange={this.handleChange} />
       </div>
     );
   }
+
+
 }
 
 AntdTables.propTypes = {
