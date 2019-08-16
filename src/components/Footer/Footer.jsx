@@ -31,12 +31,12 @@ function Footer({ ...props }) {
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
-              <a href="http://localhost:3001/admin/" className={block}>
+              <a href="http://localhost:3001/admin/" target="_blank" className={block}>
                 {rtlActive ? "" : "Home"}
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="https://www.gofar.co/" className={block}>
+              <a href="https://www.gofar.co/" target="_blank" className={block}>
                 {rtlActive ? "" : "Company"}
               </a>
             </ListItem>
@@ -45,7 +45,7 @@ function Footer({ ...props }) {
         <p className={classes.right}>
           &copy; {1900 + new Date().getYear()}{" "}
           <a
-            href="https://www.creative-tim.com?ref=mdpr-footer"
+            href="https://www.gofar.co/"
             className={anchor}
             target="_blank"
           >
