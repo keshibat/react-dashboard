@@ -68,7 +68,7 @@ class HeaderLinks extends React.Component {
     });
     return (
       <div className={wrapper}>
-        <CustomInput
+        {/* <CustomInput
           rtlActive={rtlActive}
           formControlProps={{
             className: classes.top + " " + classes.search
@@ -91,8 +91,8 @@ class HeaderLinks extends React.Component {
           <Search
             className={classes.headerLinksSvg + " " + classes.searchIcon}
           />
-        </Button>
-        <Button
+        </Button> */}
+        {/* <Button
           color="transparent"
           simple
           aria-label="Dashboard"
@@ -116,9 +116,9 @@ class HeaderLinks extends React.Component {
               {rtlActive ? "لوحة القيادة" : "Dashboard"}
             </span>
           </Hidden>
-        </Button>
+        </Button> */}
         <div className={managerClasses}>
-          <Button
+          {/* <Button
             color="transparent"
             justIcon
             aria-label="Notifications"
@@ -151,7 +151,7 @@ class HeaderLinks extends React.Component {
                 {rtlActive ? "إعلام" : "Notification"}
               </span>
             </Hidden>
-          </Button>
+          </Button> */}
           <Popper
             open={openNotification}
             anchorEl={this.anchorNotification}
@@ -218,7 +218,7 @@ class HeaderLinks extends React.Component {
         </div>
 
         <div className={managerClasses}>
-          <Button
+          {/* <Button
             color="transparent"
             aria-label="Person"
             justIcon
@@ -250,7 +250,7 @@ class HeaderLinks extends React.Component {
                 {rtlActive ? "الملف الشخصي" : "Profile"}
               </span>
             </Hidden>
-          </Button>
+          </Button> */}
           <Popper
             open={openProfile}
             anchorEl={this.anchorProfile}
