@@ -361,7 +361,7 @@ class Sidebar extends React.Component {
               // onClick={() => this.openCollapse("openAvatar")}
             >
               <ListItemText
-                primary={rtlActive ? "تانيا أندرو" : "Tania Andrew"}
+                primary={rtlActive ? "" : "user"}
                 secondary={
                   <b
                     className={
@@ -421,7 +421,7 @@ class Sidebar extends React.Component {
           target="_blank"
           className={logoNormal}
         >
-          GOFAR
+          {logoText}
         </a>
       </div>
     );
