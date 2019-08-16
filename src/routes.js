@@ -53,7 +53,16 @@ var dashRoutes = [
         name: "Mazda RX",
         layout: "/admin"
       },
-     
+     {
+      collapse: true,
+      name: "Logout",
+      state: "pageCollaspe",
+      views: [
+        {
+          path: "/login"
+        }
+      ]
+     }
     ]
   },
 ];
