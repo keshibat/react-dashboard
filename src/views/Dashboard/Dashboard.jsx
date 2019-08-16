@@ -4,12 +4,10 @@ import PropTypes from "prop-types";
 import ChartistGraph from "react-chartist";
 // react plugin for creating vector maps
 import { VectorMap } from "react-jvectormap";
-
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import Tooltip from "@material-ui/core/Tooltip";
 import Icon from "@material-ui/core/Icon";
-
 // @material-ui/icons
 // import ContentCopy from "@material-ui/icons/ContentCopy";
 import Store from "@material-ui/icons/Store";
@@ -21,8 +19,6 @@ import LocalGasStation from "@material-ui/icons/LocalGasStation";
 import DirectionsCar from "@material-ui/icons/DirectionsCar";
 import BusinessCenter from "@material-ui/icons/BusinessCenter";
 import LocationOn from "@material-ui/icons/LocationOn";
-
-
 import Update from "@material-ui/icons/Update";
 import ArrowUpward from "@material-ui/icons/ArrowUpward";
 import AccessTime from "@material-ui/icons/AccessTime";
@@ -31,7 +27,6 @@ import Edit from "@material-ui/icons/Edit";
 import Place from "@material-ui/icons/Place";
 import ArtTrack from "@material-ui/icons/ArtTrack";
 import Language from "@material-ui/icons/Language";
-
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
@@ -43,21 +38,16 @@ import CardHeader from "components/Card/CardHeader.jsx";
 import CardIcon from "components/Card/CardIcon.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
-
+import Tables from "../Tables/AntdTables";
 // other components
 import GoogleMaps from "../Maps/GoogleMaps";
-import Tables from "../Tables/ReactTables";
-
-
+// import Tables from "../Tables/AntdTables";
 import {
   dailySalesChart,
   emailsSubscriptionChart,
   completedTasksChart
 } from "variables/charts";
-
 import dashboardStyle from "assets/jss/material-dashboard-pro-react/views/dashboardStyle";
-
-
 class Dashboard extends React.Component {
   state = {
     value: 0
@@ -93,10 +83,8 @@ class Dashboard extends React.Component {
                 <div>
                   <LocationOn />
                   Last Location: Bondi Beach
-
                 </div>
                  </div>
-
               </CardFooter>
             </Card>
           </GridItem>
@@ -119,7 +107,6 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-
           <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
               <CardHeader color="info" stats icon>
@@ -141,8 +128,6 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-
-
           <GridItem xs={12} sm={6} md={6} lg={3}>
             <Card>
               <CardHeader color="info" stats icon>
@@ -165,9 +150,6 @@ class Dashboard extends React.Component {
             </Card>
           </GridItem>
         </GridContainer>
-
-
-
         <GridContainer>
           <GridItem xs={12}>
             <Card>
@@ -182,7 +164,7 @@ class Dashboard extends React.Component {
               </CardBody>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={6} md={6} lg={3}>
+          <GridItem xs={12} sm={6} md={6} lg={4}>
             <Card>
               <CardHeader color="success" stats icon>
                 <CardIcon color="success">
@@ -195,15 +177,12 @@ class Dashboard extends React.Component {
                 <div className={classes.chart}>
                   <div>
                     <DirectionsCar />
-
                   </div>
                 </div>
               </CardFooter>
             </Card>
           </GridItem>
-
-
-          <GridItem xs={12} sm={6} md={6} lg={3}>
+          <GridItem xs={12} sm={6} md={6} lg={4}>
             <Card>
               <CardHeader color="warning" stats icon>
                 <CardIcon color="warning">
@@ -226,15 +205,13 @@ class Dashboard extends React.Component {
                     4000 km (This tax year)
                 </div>
                 </div>
-
               </CardFooter>
             </Card>
           </GridItem>
-
-          <GridItem xs={12} sm={6} md={6} lg={3}>
+          <GridItem xs={12} sm={6} md={6} lg={4}>
             <Card>
-              <CardHeader color="warning" stats icon>
-                <CardIcon color="warning">
+              <CardHeader color="danger" stats icon>
+                <CardIcon color="danger">
                   <Icon>directions_car</Icon>
                 </CardIcon>
                 <p className={classes.cardCategory}>Time in car (this year)</p>
@@ -243,18 +220,33 @@ class Dashboard extends React.Component {
               <CardFooter stats>
                 <div className={classes.chart}>
                   <DirectionsCar />
-
                 </div>
               </CardFooter>
             </Card>
           </GridItem>
-
-
-          <GridItem xs={12} sm={6} md={6} lg={3}>
+        </GridContainer>
+        <GridContainer>
+          <GridItem xs={12} sm={6} md={6} lg={6}>
             <Card>
               <CardHeader color="info" stats icon>
                 <CardIcon color="info">
-                  <Icon>directions_car</Icon>
+                  <Icon>nature</Icon>
+                </CardIcon>
+                <p className={classes.cardCategory}>EMISSIONS</p>
+                <h3 className={classes.cardTitle}>74 KG CO2</h3>
+              </CardHeader>
+              <CardFooter stats>
+                <div className={classes.chart}>
+                  <DirectionsCar />
+                </div>
+              </CardFooter>
+            </Card>
+          </GridItem>
+          <GridItem xs={12} sm={6} md={6} lg={6}>
+            <Card>
+              <CardHeader color="info" stats icon>
+                <CardIcon color="info">
+                  <Icon>local_gas_station</Icon>
                 </CardIcon>
                 <p className={classes.cardCategory}>Fuel Economy</p>
                 <h3 className={classes.cardTitle}>12L/100km</h3>
@@ -266,25 +258,7 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-
-
-
-
-
-
-
-
-
-
         </GridContainer>
-
-
-
-
-
-
-
-
         <GridContainer>
           <GridItem xs={12}>
             <Card>
@@ -308,5 +282,4 @@ class Dashboard extends React.Component {
 Dashboard.propTypes = {
   classes: PropTypes.object.isRequired
 };
-
 export default withStyles(dashboardStyle)(Dashboard);
