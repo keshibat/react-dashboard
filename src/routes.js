@@ -17,7 +17,6 @@
 
 import Dashboard from "views/Dashboard/Dashboard.jsx";
 
-
 // @material-ui/icons
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import Image from "@material-ui/icons/Image";
