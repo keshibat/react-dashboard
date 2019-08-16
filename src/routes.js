@@ -16,11 +16,12 @@
 */
 
 import Dashboard from "views/Dashboard/Dashboard.jsx";
+import LoginPage from "views/Pages/LoginPage";
 
 // @material-ui/icons
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import Image from "@material-ui/icons/Image";
-import LoginPage from "views/Pages/LoginPage";
+
 
 
 var dashRoutes = [

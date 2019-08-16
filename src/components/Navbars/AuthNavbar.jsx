@@ -63,36 +63,7 @@ class AuthNavbar extends React.Component {
             />
           </NavLink>
         </ListItem>
-        <ListItem className={classes.listItem}>
-          <NavLink
-            to={"/auth/pricing-page"}
-            className={cx(classes.navLink, {
-              [classes.navLinkActive]: this.activeRoute("/auth/pricing-page")
-            })}
-          >
-            <MonetizationOn className={classes.listItemIcon} />
-            <ListItemText
-              primary={"Pricing"}
-              disableTypography={true}
-              className={classes.listItemText}
-            />
-          </NavLink>
-        </ListItem>
-        <ListItem className={classes.listItem}>
-          <NavLink
-            to={"/auth/register-page"}
-            className={cx(classes.navLink, {
-              [classes.navLinkActive]: this.activeRoute("/auth/register-page")
-            })}
-          >
-            <PersonAdd className={classes.listItemIcon} />
-            <ListItemText
-              primary={"Register"}
-              disableTypography={true}
-              className={classes.listItemText}
-            />
-          </NavLink>
-        </ListItem>
+{/*         
         <ListItem className={classes.listItem}>
           <NavLink
             to={"/auth/login-page"}
@@ -107,24 +78,7 @@ class AuthNavbar extends React.Component {
               className={classes.listItemText}
             />
           </NavLink>
-        </ListItem>
-        <ListItem className={classes.listItem}>
-          <NavLink
-            to={"/auth/lock-screen-page"}
-            className={cx(classes.navLink, {
-              [classes.navLinkActive]: this.activeRoute(
-                "/auth/lock-screen-page"
-              )
-            })}
-          >
-            <LockOpen className={classes.listItemIcon} />
-            <ListItemText
-              primary={"Lock"}
-              disableTypography={true}
-              className={classes.listItemText}
-            />
-          </NavLink>
-        </ListItem>
+        </ListItem> */}
       </List>
     );
     return (
