@@ -20,6 +20,7 @@ import CardHeader from "components/Card/CardHeader.jsx";
 import { dataTable } from "variables/general.jsx";
 import { cardTitle } from "assets/jss/material-dashboard-pro-react.jsx";
 import 'antd/dist/antd.css';
+
 // Button should be inside import { Table, Tag } from 'antd';
 import { Table, Tag } from 'antd';
 const styles = {
@@ -29,58 +30,52 @@ const styles = {
     marginBottom: "0px"
   }
 };
+
 const data = [
   {
     key: '1',
-    startlocation: 'Sydney',
     time: '2015/05/14 20:02:09',
-    endlocation: 'Melbourne',
+    tags: ["vacation"],
+    startlocation: 'Sydney',
+    endlocation: 'Melbourne'
+
   },
   {
     key: '2',
-    startlocation: 'Melbourne',
     time: '2015/05/15 06:02:02',
-    endlocation: 'Sydney',
+    tags: [],
+    startlocation: 'Melbourne',
+    endlocation: 'Sydney'
   },
   {
     key: '3',
-    startlocation: 'Brisbane',
     time: '2015/05/12 10:02:02',
-    endlocation: 'Gold Coast',
+    tags: ['busuiness'],
+    startlocation: 'Brisbane',
+    endlocation: 'Gold Coast'
+
   },
   {
     key: '4',
-    startlocation: 'Gold Coast',
     time: '2014/05/12 10:02:02',
-    endlocation: 'Brisbane',
+    tags: ["surftrip"],
+    startlocation: 'Gold Coast',
+    endlocation: 'Brisbane'
   },
 ];
+
+
 const columns = [
   {
     title: 'Time',
     dataIndex: 'time'
   },
+
   {
     title: 'Tags',
     dataIndex: 'tags',
-    render: tags => (
-      <span>
-        {tags.map(tag => {
-          let color = 'green';
-          if (tag === 'vacation') {
-            color = 'volcano';
-          } else if (tag === 'busuiness') {
-            color = 'geekblue';
-          }
-          return (
-            <Tag color={color} key={tag}>
-              {tag.toUpperCase()}
-            </Tag>
-          );
-        })}
-      </span>
-    ),
   },
+
   {
     title: 'Start Loocation',
     dataIndex: 'startlocation'
@@ -90,6 +85,9 @@ const columns = [
     dataIndex: 'endlocation'
   }
 ];
+
+
+
 class AntdTables extends React.Component {
   state = {
     filteredInfo: null,
@@ -119,6 +117,7 @@ class AntdTables extends React.Component {
       },
     });
   };
+
   render() {
     let { sortedInfo, filteredInfo } = this.state;
     sortedInfo = sortedInfo || {};
@@ -131,6 +130,29 @@ class AntdTables extends React.Component {
         sorter: (a, b) => a.time - b.time,
         sortOrder: sortedInfo.columnKey === 'time' && sortedInfo.order,
       },
+
+      {
+        title: 'Tags',
+        dataIndex: 'tags',
+        render: tags => (
+          <span>
+            {tags.map(tag => {
+              let color = 'green';
+              if (tag === 'vacation') {
+                color = 'red';
+              } else if (tag === 'busuiness') {
+                color = 'blue';
+              }
+              return (
+                <Tag color={color} key={tag}>
+                  {tag.toUpperCase()}
+                </Tag>
+              );
+            })}
+          </span>
+        ),
+      },
+
       {
         title: 'Start Location',
         dataIndex: 'startlocation',
@@ -141,6 +163,7 @@ class AntdTables extends React.Component {
         sorter: (a, b) => a.startlocation.length - b.startlocation.length,
         sortOrder: sortedInfo.columnKey === 'startlocation' && sortedInfo.order,
       },
+
       {
         title: 'End Location',
         dataIndex: 'endlocation',
@@ -151,6 +174,7 @@ class AntdTables extends React.Component {
         sorter: (a, b) => a.endlocation.length - b.endlocation.length,
         sortOrder: sortedInfo.columnKey === 'endlocation' && sortedInfo.order,
       },
+
     ];
     return (
       <div>
