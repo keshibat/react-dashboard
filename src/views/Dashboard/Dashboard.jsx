@@ -183,7 +183,7 @@ class Dashboard extends React.Component {
               </CardBody>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={6} md={6} lg={3}>
+          <GridItem xs={12} sm={6} md={6} lg={4}>
             <Card>
               <CardHeader color="success" stats icon>
                 <CardIcon color="success">
@@ -204,7 +204,7 @@ class Dashboard extends React.Component {
           </GridItem>
 
 
-          <GridItem xs={12} sm={6} md={6} lg={3}>
+          <GridItem xs={12} sm={6} md={6} lg={4}>
             <Card>
               <CardHeader color="warning" stats icon>
                 <CardIcon color="warning">
@@ -232,10 +232,10 @@ class Dashboard extends React.Component {
             </Card>
           </GridItem>
 
-          <GridItem xs={12} sm={6} md={6} lg={3}>
+          <GridItem xs={12} sm={6} md={6} lg={4}>
             <Card>
-              <CardHeader color="warning" stats icon>
-                <CardIcon color="warning">
+              <CardHeader color="danger" stats icon>
+                <CardIcon color="danger">
                   <Icon>directions_car</Icon>
                 </CardIcon>
                 <p className={classes.cardCategory}>Time in car (this year)</p>
@@ -251,11 +251,36 @@ class Dashboard extends React.Component {
           </GridItem>
 
 
-          <GridItem xs={12} sm={6} md={6} lg={3}>
+
+
+
+
+
+        </GridContainer>
+
+        <GridContainer>
+          <GridItem xs={12} sm={6} md={6} lg={6}>
             <Card>
               <CardHeader color="info" stats icon>
                 <CardIcon color="info">
-                  <Icon>directions_car</Icon>
+                  <Icon>nature</Icon>
+                </CardIcon>
+                <p className={classes.cardCategory}>EMISSIONS</p>
+                <h3 className={classes.cardTitle}>74 KG CO2</h3>
+              </CardHeader>
+              <CardFooter stats>
+                <div className={classes.chart}>
+                  <DirectionsCar />
+                </div>
+              </CardFooter>
+            </Card>
+          </GridItem>
+
+          <GridItem xs={12} sm={6} md={6} lg={6}>
+            <Card>
+              <CardHeader color="info" stats icon>
+                <CardIcon color="info">
+                  <Icon>local_gas_station</Icon>
                 </CardIcon>
                 <p className={classes.cardCategory}>Fuel Economy</p>
                 <h3 className={classes.cardTitle}>12L/100km</h3>
@@ -267,7 +292,6 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-
 
         </GridContainer>
 
@@ -294,6 +318,9 @@ class Dashboard extends React.Component {
     );
   }
 }
+
+
+
 
 Dashboard.propTypes = {
   classes: PropTypes.object.isRequired
