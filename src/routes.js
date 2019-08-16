@@ -20,6 +20,7 @@ import Dashboard from "views/Dashboard/Dashboard.jsx";
 // @material-ui/icons
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import Image from "@material-ui/icons/Image";
+import LoginPage from "views/Pages/LoginPage";
 
 
 var dashRoutes = [
@@ -39,31 +40,35 @@ var dashRoutes = [
     state: "pageCollapse",
     views: [
       {
-        path: "/dashboard",
+        path: "/dashboard/MercedesBenz",
         name: "Mercedes Benz",
         layout: "/admin"
       },
       {
-        path: "/dashboard",
+        path: "/dashboard/Toyota",
         name: "Toyota",
         layout: "/admin"
       },
       {
-        path: "/dashboard",
+        path: "/dashboard/MazdaRX",
         name: "Mazda RX",
         layout: "/admin"
       },
-     {
-      collapse: true,
-      name: "Logout",
-      state: "pageCollaspe",
-      views: [
-        {
-          path: "/login"
-        }
-      ]
-     }
+   
     ]
   },
+  {
+    collapse: true,
+    name: "Logout",
+    state: "pageCollaspe",
+    views: [
+      {
+        path: "/login-page",
+        name: "logout",
+        component: LoginPage,
+        layout: "/auth"
+      }
+    ]
+   }
 ];
 export default dashRoutes;
