@@ -41,18 +41,18 @@ var dashRoutes = [
     state: "pageCollapse",
     views: [
       {
-        path: "/dashboard/MercedesBenz",
-        name: "Mercedes Benz",
+        path: "/dashboard/car1",
+        name: "Car 1",
         layout: "/admin"
       },
       {
-        path: "/dashboard/Toyota",
-        name: "Toyota",
+        path: "/dashboard/car2",
+        name: "Car 2",
         layout: "/admin"
       },
       {
-        path: "/dashboard/MazdaRX",
-        name: "Mazda RX",
+        path: "/dashboard/car3",
+        name: "Car 3",
         layout: "/admin"
       },
    
