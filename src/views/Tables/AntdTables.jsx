@@ -18,7 +18,7 @@ const styles = {
 const data = [
   {
     key: '1',
-    time: '2019/05/14 20:02:09',
+    time: '2019-01-17T08:00:00Z',
     tags: ["vacation"],
     startlocation: 'Sydney',
     endlocation: 'Melbourne'
@@ -26,14 +26,14 @@ const data = [
   },
   {
     key: '2',
-    time: '2019/05/15 06:02:02',
+    time: '2019-04-17T09:52:00Z',
     tags: [],
     startlocation: 'Melbourne',
     endlocation: 'Sydney'
   },
   {
     key: '3',
-    time: '2019/05/12 10:02:02',
+    time: '2019-05-17T12:32:00Z',
     tags: ['busuiness'],
     startlocation: 'Brisbane',
     endlocation: 'Gold Coast'
@@ -41,7 +41,7 @@ const data = [
   },
   {
     key: '4',
-    time: '2018/05/22 18:02:02',
+    time: '2019-07-17T11:00:00Z',
     tags: ["surftrip"],
     startlocation: 'Gold Coast',
     endlocation: 'Brisbane'
@@ -49,7 +49,7 @@ const data = [
 
   {
     key: '5',
-    time: '2019/05/19 13:02:02',
+    time: '2019-07-21T11:33:00Z',
     tags: ['busuiness'],
     startlocation: 'lennox head',
     endlocation: 'Margaret River'
@@ -57,14 +57,14 @@ const data = [
   },
   {
     key: '6',
-    time: '2018/05/14 19:02:02',
+    time: '2019-08-01T19:41:00Z',
     tags: ["surftrip"],
     startlocation: 'Perth',
     endlocation: 'Adelaide'
   },
   {
     key: '7',
-    time: '2019/05/12 10:02:02',
+    time: '2019-08-15T15:21:00Z',
     tags: ['busuiness'],
     startlocation: 'Adelaide',
     endlocation: 'Brisbane'
