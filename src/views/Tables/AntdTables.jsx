@@ -51,8 +51,8 @@ const data = [
     key: '5',
     time: '2019/05/19 13:02:02',
     tags: ['busuiness'],
-      startlocation: 'lennox head',
-      endlocation: 'Margaret River'
+    startlocation: 'lennox head',
+    endlocation: 'Margaret River'
 
   },
   {
@@ -162,7 +162,7 @@ class AntdTables extends React.Component {
         ),
         key: 'tags',
         filters: [{ text: 'busuiness', value: 'busuiness' }, { text: 'vacation', value: 'vacation' }],
-        filteredValue: filteredInfo.startlocation || null,
+        filteredValue: filteredInfo.tags || null,
         onFilter: (value, record) => record.tags.includes(value),
       },
 
@@ -184,7 +184,7 @@ class AntdTables extends React.Component {
         filters: [{ text: 'Sydney', value: 'Sydney' }, { text: 'Brisbane', value: 'Brisbane' }],
         filteredValue: filteredInfo.endlocation || null,
         onFilter: (value, record) => record.endlocation.includes(value),
-      },
+      }
 
     ];
     return (
