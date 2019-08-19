@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 import { NavLink } from "react-router-dom";
@@ -15,7 +16,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Hidden from "@material-ui/core/Hidden";
 import Collapse from "@material-ui/core/Collapse";
 import Icon from "@material-ui/core/Icon";
-
+import {Typeahead} from 'react-bootstrap-typeahead';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 // core components
 import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.jsx";
@@ -363,7 +365,7 @@ class Sidebar extends React.Component {
               // onClick={() => this.openCollapse("openAvatar")}
             >
               <ListItemText
-                primary={rtlActive ? "تانيا أندرو" : "Tania Andrew"}
+                primary={rtlActive ? "تانيا أندرو" : "Car Search"}
                 secondary={
                   <b
                     className={
@@ -381,8 +383,10 @@ class Sidebar extends React.Component {
             </NavLink>
           </ListItem>
         </List>
+        
+        
       </div>
-    );
+    );  
     var links = (
       <List className={classes.list}>{this.createLinks(routes)}</List>
     );

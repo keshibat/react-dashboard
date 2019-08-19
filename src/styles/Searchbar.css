@@ -1,0 +1,41 @@
+.AutoCompleteText {
+    width: 75%;
+    /* border: 1px solid grey; */
+    /* box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);  */
+}
+
+.AutoCompleteText input {
+    width: 75%;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(0,0,0,0.73);
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
+    margin: 0 25% 0 25%;
+    height: 40px;
+    font-size: 20px;
+}
+
+.AutoCompleteText li {
+    margin: 0 0 0 25%;
+    cursor: pointer;
+    background-color: white;
+}
+
+.AutoCompleteText li:hover {
+    text-decoration: underline;
+    background-color: rgba(128,128,128,0.20);
+}
+
+/* .App-Component {
+    margin: 150px auto 0 auto;
+    width: 600px;
+} */
+
+.AutoCompleteText ul {
+    list-style-type: none;
+    text-align: left;
+    margin: 0;
+    padding: 0 ;
+   
+}
+

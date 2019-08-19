@@ -19,6 +19,10 @@ import AdminNavbarLinks from "./AdminNavbarLinks";
 import Button from "components/CustomButtons/Button.jsx";
 
 import adminNavbarStyle from "assets/jss/material-dashboard-pro-react/components/adminNavbarStyle.jsx";
+import Searchbar from "components/Searchbar/Searchbar";
+import 'styles/Searchbar.css';
+
+
 
 function AdminNavbar({ ...props }) {
   const { classes, color, rtlActive, brandText } = props;
@@ -43,6 +47,7 @@ function AdminNavbar({ ...props }) {
                 color="white"
                 onClick={props.sidebarMinimize}
               >
+             
                 <ViewList className={classes.sidebarMiniIcon} />
               </Button>
             ) : (
@@ -63,6 +68,8 @@ function AdminNavbar({ ...props }) {
             Test
           </Button> */}
         </div>
+       
+      
         <Hidden smDown implementation="css">
           <AdminNavbarLinks rtlActive={rtlActive} />
         </Hidden>
@@ -78,6 +85,10 @@ function AdminNavbar({ ...props }) {
           </Button>
         </Hidden>
       </Toolbar>
+      <div>
+      <Searchbar/>
+      </div>
+      
     </AppBar>
   );
 }
