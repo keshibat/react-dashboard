@@ -33,16 +33,16 @@ var dashRoutes = [
     component: Dashboard,
     layout: "/admin"
   },
-  {
-    collapse: true,
-    name: "Car Search",
-    rtlName: "صفحات",
-    icon: Image,
-    state: "pageCollapse",
-    views: [
+  // {
+  //   collapse: true,
+  //   name: "Car Search",
+  //   rtlName: "صفحات",
+  //   icon: Image,
+  //   state: "pageCollapse",
+  //   views: [
      
-    ]
-  },
+  //   ]
+  // },
   {
     collapse: true,
     name: "Logout",

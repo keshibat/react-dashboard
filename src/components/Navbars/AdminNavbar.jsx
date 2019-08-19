@@ -84,10 +84,11 @@ function AdminNavbar({ ...props }) {
             <Menu />
           </Button>
         </Hidden>
+        <Searchbar/>
       </Toolbar>
-      <div>
-      <Searchbar/>
-      </div>
+      
+    
+      
       
     </AppBar>
   );
