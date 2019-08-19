@@ -6,6 +6,9 @@
 
 /* Shadows (from mdl https://www.getmdl.io/) */
 
+.center {
+    margin: 0 auto;
+}
 .noUi-target,
 .noUi-target * {
     -webkit-touch-callout: none;

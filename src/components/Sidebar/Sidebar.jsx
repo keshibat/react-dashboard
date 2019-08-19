@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 import { NavLink } from "react-router-dom";
@@ -14,6 +15,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Hidden from "@material-ui/core/Hidden";
 import Collapse from "@material-ui/core/Collapse";
 import Icon from "@material-ui/core/Icon";
+
 
 // core components
 import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.jsx";
@@ -407,6 +409,9 @@ class Sidebar extends React.Component {
       cx({
         [classes.whiteAfter]: bgColor === "white"
       });
+    var center = {
+      margin: "0 auto"
+    };
     var brand = (
       <div className={logoClasses}>
         <a
@@ -414,14 +419,14 @@ class Sidebar extends React.Component {
           target="_blank"
           className={logoMini}
         >
-          {/* <img src={logo} alt="logo" className={classes.img} /> */}
+        
         </a>
         <a
           href="https://www.gofar.co/"
           target="_blank"
           className={logoNormal}
         >
-          GOFAR
+          GOFAR - Dashboard
         </a>
       </div>
     );

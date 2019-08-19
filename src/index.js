@@ -11,6 +11,7 @@ import "assets/scss/material-dashboard-pro-react.scss?v=1.7.0";
 
 const hist = createBrowserHistory();
 
+
 ReactDOM.render(
   <Router history={hist}>
     <Switch>

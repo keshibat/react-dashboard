@@ -18,6 +18,7 @@
 import Dashboard from "views/Dashboard/Dashboard.jsx";
 import LoginPage from "views/Pages/LoginPage";
 
+
 // @material-ui/icons
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import Image from "@material-ui/icons/Image";
@@ -35,7 +36,7 @@ var dashRoutes = [
   },
   {
     collapse: true,
-    name: "Cars",
+    name: "Car Search",
     rtlName: "صفحات",
     icon: Image,
     state: "pageCollapse",

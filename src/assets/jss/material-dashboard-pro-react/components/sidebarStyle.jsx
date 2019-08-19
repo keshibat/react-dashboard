@@ -162,7 +162,7 @@ const sidebarStyle = theme => ({
     transform: "translate3d(0px, 0, 0)",
     textTransform: "uppercase",
     padding: "5px 0px",
-    fontSize: "18px",
+    // fontSize: "18px",
     whiteSpace: "nowrap",
     fontWeight: "400",
     lineHeight: "30px",
