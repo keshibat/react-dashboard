@@ -64,6 +64,7 @@ class Dashboard extends React.Component {
     const { classes } = this.props;
     return (
       <>
+      <h2 style={{margin: "0 0 0 9%"}}>Search</h2>
       <Searchbar items={[{
           carName: "Merc",
           totalDistance: 30020,
@@ -75,6 +76,30 @@ class Dashboard extends React.Component {
           totalDistance: 234023,
           lastFillUp: 45,
           EstimateFuelLeft: 45
+        },
+        {
+          carName: "Nissan",
+          totalDistance: 30023,
+          lastFillUp: 44,
+          EstimateFuelLeft: 11
+        },
+        {
+          carName: 'Ferrari',
+          totalDistance: 2342023,
+          lastFillUp: 42,
+          EstimateFuelLeft: 411
+        },
+        {
+          carName: "Bus",
+          totalDistance: 302220,
+          lastFillUp: 32,
+          EstimateFuelLeft: 58
+        },
+        {
+          carName: 'Mclaren',
+          totalDistance: 2312023,
+          lastFillUp: 425,
+          EstimateFuelLeft: 450
         } 
           ]}/>
       <div>

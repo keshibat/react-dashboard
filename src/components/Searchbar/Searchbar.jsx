@@ -28,14 +28,20 @@ class Searchbar extends Component {
     suggestionSelected (value) {
         this.setState(() => ({
             text: value,
-            suggestions: [],
+            suggestions: [value],
+
         }))
     }
         
-    renderSuggestions () {
+    renderSuggestions = () => {
         const { suggestions } = this.state;
-        if (suggestions.length === 0) {
-            return null;
+        const { text } = this.state;
+        if (suggestions.length === 0 && text !== '') {
+            return (
+                <ul>
+                <li>No Results Found...</li>
+            </ul>
+            )
         }
         return (
             <ul>
@@ -53,8 +59,11 @@ class Searchbar extends Component {
                 const data = items[i]
                console.log(data);
            } 
-       }
-        ;
+       };
+       this.setState(() => ({
+           text: '',
+           suggestions: []
+       }))
     }
     render() {
         const { text } = this.state
@@ -62,7 +71,7 @@ class Searchbar extends Component {
             <div className="App-Component">
                 <div className="AutoCompleteText">
                 <form className="example">
-                <input value = {text} onChange={this.onTextChanged} placeholder="Search for car" type="text"/>
+                <input value = {text} onChange={this.onTextChanged} placeholder="Search for car..." type="text"/>
                 <button onClick={this.grabCarData} type="submit" className="submit-button"><i className="fa fa-search"></i></button>
                     {/* <span><button className="button-style">Go</button></span> */}
                     <ul>
