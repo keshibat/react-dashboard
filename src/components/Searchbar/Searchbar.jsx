@@ -1,17 +1,10 @@
 import React, {Component} from 'react';
 import '../../styles/Searchbar.css';
 
+
 class Searchbar extends Component {
     constructor(props){
         super(props);
-        this.items = [
-            'Mercedes Benz',
-            'Toyota',
-            'Nissan',
-            'BMW',
-            'Ferrari',
-            'Nissan rx'
-        ];
         this.state = {
             suggestions: [],
             text: '',
@@ -19,13 +12,17 @@ class Searchbar extends Component {
     }
 
     onTextChanged = (e) => {
+        const { items } = this.props;
         const value = e.target.value;
+        const cars = items.map(car => ( car.carName))
+        
         let suggestions = [];
         if (value.length > 0) {
             const regex = new RegExp(`^${value}`, 'i');
-            suggestions = this.items.sort().filter(v => regex.test(v));
+            suggestions = cars.sort().filter(v => regex.test(v));
         }    
             this.setState(() => ({suggestions, text: value}));
+           
     }
 
     suggestionSelected (value) {
@@ -47,15 +44,32 @@ class Searchbar extends Component {
         )
     }
 
+    grabCarData = (e) => {
+        e.preventDefault();
+        const {items} = this.props;
+        const { text } = this.state;
+       for(let i = 0; i < items.length; i++) {
+           if (text === items[i].carName) {
+                const data = items[i]
+               console.log(data);
+           } 
+       }
+        ;
+    }
     render() {
         const { text } = this.state
         return (
             <div className="App-Component">
                 <div className="AutoCompleteText">
-                    <input value = {text} onChange={this.onTextChanged} placeholder="Search for car" type="text"/>
+                <form className="example">
+                <input value = {text} onChange={this.onTextChanged} placeholder="Search for car" type="text"/>
+                <button onClick={this.grabCarData} type="submit" className="submit-button"><i className="fa fa-search"></i></button>
+                    {/* <span><button className="button-style">Go</button></span> */}
                     <ul>
                         {this.renderSuggestions()}
                     </ul>
+                </form>
+                   
                 </div>
             </div>
         )

@@ -39,6 +39,8 @@ import CardIcon from "components/Card/CardIcon.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 import Tables from "../Tables/AntdTables";
+import Searchbar from "components/Searchbar/Searchbar";
+
 // other components
 import GoogleMaps from "../Maps/GoogleMaps";
 // import Tables from "../Tables/AntdTables";
@@ -61,6 +63,20 @@ class Dashboard extends React.Component {
   render() {
     const { classes } = this.props;
     return (
+      <>
+      <Searchbar items={[{
+          carName: "Merc",
+          totalDistance: 30020,
+          lastFillUp: 30,
+          EstimateFuelLeft: 58
+        },
+        {
+          carName: 'Toyota',
+          totalDistance: 234023,
+          lastFillUp: 45,
+          EstimateFuelLeft: 45
+        } 
+          ]}/>
       <div>
         <GridContainer>
           <GridItem xs={12} sm={6} md={6} lg={3}>
@@ -275,6 +291,7 @@ class Dashboard extends React.Component {
           </GridItem>
         </GridContainer>
       </div>
+      </>
     );
   }
 }

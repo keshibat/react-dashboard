@@ -24,6 +24,8 @@ import 'styles/Searchbar.css';
 
 
 
+
+
 function AdminNavbar({ ...props }) {
   const { classes, color, rtlActive, brandText } = props;
   const appBarClasses = cx({
@@ -84,12 +86,20 @@ function AdminNavbar({ ...props }) {
             <Menu />
           </Button>
         </Hidden>
-        <Searchbar/>
-      </Toolbar>
-      
-    
-      
-      
+        {/* <Searchbar items={[{
+          carName: "Merc",
+          totalDistance: 30020,
+          lastFillUp: 30,
+          EstimateFuelLeft: 58
+        },
+        {
+          carName: 'Toyota',
+          totalDistance: 234023,
+          lastFillUp: 45,
+          EstimateFuelLeft: 45
+        } 
+          ]}/> */}
+      </Toolbar>  
     </AppBar>
   );
 }
