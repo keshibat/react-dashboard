@@ -1,23 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-// react component for creating dynamic tables
-import ReactTable from "react-table";
-// @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-// @material-ui/icons
-import Assignment from "@material-ui/icons/Assignment";
-import Dvr from "@material-ui/icons/Dvr";
-import Favorite from "@material-ui/icons/Favorite";
-import Close from "@material-ui/icons/Close";
-// core components
-import GridContainer from "components/Grid/GridContainer.jsx";
-import GridItem from "components/Grid/GridItem.jsx";
 import Button from "components/CustomButtons/Button.jsx";
-import Card from "components/Card/Card.jsx";
-import CardBody from "components/Card/CardBody.jsx";
-import CardIcon from "components/Card/CardIcon.jsx";
-import CardHeader from "components/Card/CardHeader.jsx";
-// import { dataTable } from "variables/general.jsx";
 import { cardTitle } from "assets/jss/material-dashboard-pro-react.jsx";
 import 'antd/dist/antd.css';
 
@@ -34,7 +18,7 @@ const styles = {
 const data = [
   {
     key: '1',
-    time: '2015/05/14 20:02:09',
+    time: '2019-01-17T08:00:00Z',
     tags: ["vacation"],
     startlocation: 'Sydney',
     endlocation: 'Melbourne'
@@ -42,14 +26,14 @@ const data = [
   },
   {
     key: '2',
-    time: '2015/05/15 06:02:02',
+    time: '2019-04-17T09:52:00Z',
     tags: [],
     startlocation: 'Melbourne',
     endlocation: 'Sydney'
   },
   {
     key: '3',
-    time: '2015/05/12 10:02:02',
+    time: '2019-05-17T12:32:00Z',
     tags: ['busuiness'],
     startlocation: 'Brisbane',
     endlocation: 'Gold Coast'
@@ -57,12 +41,37 @@ const data = [
   },
   {
     key: '4',
-    time: '2014/05/12 10:02:02',
+    time: '2019-07-17T11:00:00Z',
     tags: ["surftrip"],
     startlocation: 'Gold Coast',
     endlocation: 'Brisbane'
   },
+
+  {
+    key: '5',
+    time: '2019-07-21T11:33:00Z',
+    tags: ['busuiness'],
+    startlocation: 'lennox head',
+    endlocation: 'Margaret River'
+
+  },
+  {
+    key: '6',
+    time: '2019-08-01T19:41:00Z',
+    tags: ["surftrip"],
+    startlocation: 'Perth',
+    endlocation: 'Adelaide'
+  },
+  {
+    key: '7',
+    time: '2019-08-15T15:21:00Z',
+    tags: ['busuiness'],
+    startlocation: 'Adelaide',
+    endlocation: 'Brisbane'
+
+  },
 ];
+
 
 
 const columns = [
@@ -127,7 +136,7 @@ class AntdTables extends React.Component {
         title: 'Time',
         dataIndex: 'time',
         key: 'time',
-        sorter: (a, b) => a.time - b.time,
+        sorter: (a, b) => (a.date < b.date) ? -1 : ((a.date > b.date) ? 1 : 0),
         sortOrder: sortedInfo.columnKey === 'time' && sortedInfo.order,
       },
 
@@ -151,7 +160,12 @@ class AntdTables extends React.Component {
             })}
           </span>
         ),
+        key: 'tags',
+        filters: [{ text: 'busuiness', value: 'busuiness' }, { text: 'vacation', value: 'vacation' }],
+        filteredValue: filteredInfo.tags || null,
+        onFilter: (value, record) => record.tags.includes(value),
       },
+
 
       {
         title: 'Start Location',
@@ -160,9 +174,8 @@ class AntdTables extends React.Component {
         filters: [{ text: 'Sydney', value: 'Sydney' }, { text: 'Brisbane', value: 'Brisbane' }],
         filteredValue: filteredInfo.startlocation || null,
         onFilter: (value, record) => record.startlocation.includes(value),
-        sorter: (a, b) => a.startlocation.length - b.startlocation.length,
-        sortOrder: sortedInfo.columnKey === 'startlocation' && sortedInfo.order,
       },
+
 
       {
         title: 'End Location',
@@ -171,9 +184,7 @@ class AntdTables extends React.Component {
         filters: [{ text: 'Sydney', value: 'Sydney' }, { text: 'Brisbane', value: 'Brisbane' }],
         filteredValue: filteredInfo.endlocation || null,
         onFilter: (value, record) => record.endlocation.includes(value),
-        sorter: (a, b) => a.endlocation.length - b.endlocation.length,
-        sortOrder: sortedInfo.columnKey === 'endlocation' && sortedInfo.order,
-      },
+      }
 
     ];
     return (

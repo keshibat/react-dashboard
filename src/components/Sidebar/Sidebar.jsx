@@ -383,10 +383,10 @@ class Sidebar extends React.Component {
             </NavLink>
           </ListItem>
         </List>
-        
-        
+
+
       </div>
-    );  
+    );
     var links = (
       <List className={classes.list}>{this.createLinks(routes)}</List>
     );
@@ -423,7 +423,7 @@ class Sidebar extends React.Component {
           target="_blank"
           className={logoMini}
         >
-        
+
         </a>
         <a
           href="https://www.gofar.co/"
@@ -545,4 +545,3 @@ SidebarWrapper.propTypes = {
 };
 
 export default withStyles(sidebarStyle)(Sidebar);
-
