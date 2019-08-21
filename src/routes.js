@@ -33,16 +33,34 @@ var dashRoutes = [
     component: Dashboard,
     layout: "/admin"
   },
-  // {
-  //   collapse: true,
-  //   name: "Car Search",
-  //   rtlName: "صفحات",
-  //   icon: Image,
-  //   state: "pageCollapse",
-  //   views: [
-     
-  //   ]
-  // },
+  {
+    collapse: true,
+    name: "Cars",
+    rtlName: "صفحات",
+    icon: Image,
+    state: "pageCollapse",
+    views: [
+      {
+        name: "Try to put search here"
+        // path: "/dashboard/chosen_car"
+      },
+      {
+        name: "Car 1",
+        path: "/dashboard/chosen_car1",
+        layout: "/admin"
+      },
+      {
+        name: "Car 2",
+        path: "/dashboard/chosen_car2",
+        layout: "/admin"
+      },
+      {
+        name: "Car 3",
+        path: "/dashboard/chosen_car3 ",
+        layout: "/admin"
+      },
+    ]
+  },
   {
     collapse: true,
     name: "Logout",

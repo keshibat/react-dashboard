@@ -29,7 +29,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import AdminNavbar from "components/Navbars/AdminNavbar.jsx";
 import Footer from "components/Footer/Footer.jsx";
 import Sidebar from "components/Sidebar/Sidebar.jsx";
-import FixedPlugin from "components/FixedPlugin/FixedPlugin.jsx";
+// import FixedPlugin from "components/FixedPlugin/FixedPlugin.jsx";
 
 import routes from "routes.js";
 
@@ -183,7 +183,7 @@ class RTL extends React.Component {
             </div>
           </div>
           <Footer fluid rtlActive />
-          <FixedPlugin
+          {/* <FixedPlugin
             handleImageClick={this.handleImageClick}
             handleColorClick={this.handleColorClick}
             handleBgColorClick={this.handleBgColorClick}
@@ -196,7 +196,7 @@ class RTL extends React.Component {
             sidebarMinimize={this.sidebarMinimize.bind(this)}
             miniActive={this.state.miniActive}
             rtlActive={true}
-          />
+          /> */}
         </div>
       </div>
     );

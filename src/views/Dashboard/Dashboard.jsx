@@ -30,7 +30,7 @@ import Language from "@material-ui/icons/Language";
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import Table from "components/Table/Table.jsx";
+// import Table from "components/Table/Table.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 import Danger from "components/Typography/Danger.jsx";
 import Card from "components/Card/Card.jsx";
@@ -44,11 +44,11 @@ import Searchbar from "components/Searchbar/Searchbar";
 // other components
 import GoogleMaps from "../Maps/GoogleMaps";
 // import Tables from "../Tables/AntdTables";
-import {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  completedTasksChart
-} from "variables/charts";
+// import {
+//   dailySalesChart,
+//   emailsSubscriptionChart,
+//   completedTasksChart
+// } from "variables/charts";
 import dashboardStyle from "assets/jss/material-dashboard-pro-react/views/dashboardStyle";
 class Dashboard extends React.Component {
   state = {
